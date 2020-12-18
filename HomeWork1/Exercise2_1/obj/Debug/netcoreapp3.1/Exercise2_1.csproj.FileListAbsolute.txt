@@ -1,0 +1,15 @@
+D:\ВСЕ МОЕ\ВАЖЛИВЕ\Parimatch Academy\PM_HomeWorks\Exercise2_1\bin\Debug\netcoreapp3.1\Exercise2_1.exe
+D:\ВСЕ МОЕ\ВАЖЛИВЕ\Parimatch Academy\PM_HomeWorks\Exercise2_1\bin\Debug\netcoreapp3.1\Exercise2_1.deps.json
+D:\ВСЕ МОЕ\ВАЖЛИВЕ\Parimatch Academy\PM_HomeWorks\Exercise2_1\bin\Debug\netcoreapp3.1\Exercise2_1.runtimeconfig.json
+D:\ВСЕ МОЕ\ВАЖЛИВЕ\Parimatch Academy\PM_HomeWorks\Exercise2_1\bin\Debug\netcoreapp3.1\Exercise2_1.runtimeconfig.dev.json
+D:\ВСЕ МОЕ\ВАЖЛИВЕ\Parimatch Academy\PM_HomeWorks\Exercise2_1\bin\Debug\netcoreapp3.1\Exercise2_1.dll
+D:\ВСЕ МОЕ\ВАЖЛИВЕ\Parimatch Academy\PM_HomeWorks\Exercise2_1\bin\Debug\netcoreapp3.1\Exercise2_1.pdb
+D:\ВСЕ МОЕ\ВАЖЛИВЕ\Parimatch Academy\PM_HomeWorks\Exercise2_1\bin\Debug\netcoreapp3.1\HomeWork1.dll
+D:\ВСЕ МОЕ\ВАЖЛИВЕ\Parimatch Academy\PM_HomeWorks\Exercise2_1\bin\Debug\netcoreapp3.1\HomeWork1.pdb
+D:\ВСЕ МОЕ\ВАЖЛИВЕ\Parimatch Academy\PM_HomeWorks\Exercise2_1\obj\Debug\netcoreapp3.1\Exercise2_1.AssemblyInfoInputs.cache
+D:\ВСЕ МОЕ\ВАЖЛИВЕ\Parimatch Academy\PM_HomeWorks\Exercise2_1\obj\Debug\netcoreapp3.1\Exercise2_1.AssemblyInfo.cs
+D:\ВСЕ МОЕ\ВАЖЛИВЕ\Parimatch Academy\PM_HomeWorks\Exercise2_1\obj\Debug\netcoreapp3.1\Exercise2_1.csproj.CoreCompileInputs.cache
+D:\ВСЕ МОЕ\ВАЖЛИВЕ\Parimatch Academy\PM_HomeWorks\Exercise2_1\obj\Debug\netcoreapp3.1\Exercise2_1.csproj.CopyComplete
+D:\ВСЕ МОЕ\ВАЖЛИВЕ\Parimatch Academy\PM_HomeWorks\Exercise2_1\obj\Debug\netcoreapp3.1\Exercise2_1.dll
+D:\ВСЕ МОЕ\ВАЖЛИВЕ\Parimatch Academy\PM_HomeWorks\Exercise2_1\obj\Debug\netcoreapp3.1\Exercise2_1.pdb
+D:\ВСЕ МОЕ\ВАЖЛИВЕ\Parimatch Academy\PM_HomeWorks\Exercise2_1\obj\Debug\netcoreapp3.1\Exercise2_1.genruntimeconfig.cache
