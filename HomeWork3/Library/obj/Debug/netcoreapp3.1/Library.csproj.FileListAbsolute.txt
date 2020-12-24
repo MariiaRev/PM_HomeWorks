@@ -1,0 +1,9 @@
+D:\ВСЕ МОЕ\ВАЖЛИВЕ\Parimatch Academy\PM_HomeWorks\HomeWork3\Library\bin\Debug\netcoreapp3.1\Library.deps.json
+D:\ВСЕ МОЕ\ВАЖЛИВЕ\Parimatch Academy\PM_HomeWorks\HomeWork3\Library\bin\Debug\netcoreapp3.1\Library.dll
+D:\ВСЕ МОЕ\ВАЖЛИВЕ\Parimatch Academy\PM_HomeWorks\HomeWork3\Library\bin\Debug\netcoreapp3.1\Library.pdb
+D:\ВСЕ МОЕ\ВАЖЛИВЕ\Parimatch Academy\PM_HomeWorks\HomeWork3\Library\obj\Debug\netcoreapp3.1\Library.csprojAssemblyReference.cache
+D:\ВСЕ МОЕ\ВАЖЛИВЕ\Parimatch Academy\PM_HomeWorks\HomeWork3\Library\obj\Debug\netcoreapp3.1\Library.AssemblyInfoInputs.cache
+D:\ВСЕ МОЕ\ВАЖЛИВЕ\Parimatch Academy\PM_HomeWorks\HomeWork3\Library\obj\Debug\netcoreapp3.1\Library.AssemblyInfo.cs
+D:\ВСЕ МОЕ\ВАЖЛИВЕ\Parimatch Academy\PM_HomeWorks\HomeWork3\Library\obj\Debug\netcoreapp3.1\Library.csproj.CoreCompileInputs.cache
+D:\ВСЕ МОЕ\ВАЖЛИВЕ\Parimatch Academy\PM_HomeWorks\HomeWork3\Library\obj\Debug\netcoreapp3.1\Library.dll
+D:\ВСЕ МОЕ\ВАЖЛИВЕ\Parimatch Academy\PM_HomeWorks\HomeWork3\Library\obj\Debug\netcoreapp3.1\Library.pdb
