@@ -1,0 +1,14 @@
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\Task1_FindingPrimes\bin\Debug\netcoreapp3.1\Task1_FindingPrimes.exe
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\Task1_FindingPrimes\bin\Debug\netcoreapp3.1\Task1_FindingPrimes.deps.json
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\Task1_FindingPrimes\bin\Debug\netcoreapp3.1\Task1_FindingPrimes.runtimeconfig.json
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\Task1_FindingPrimes\bin\Debug\netcoreapp3.1\Task1_FindingPrimes.runtimeconfig.dev.json
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\Task1_FindingPrimes\bin\Debug\netcoreapp3.1\Task1_FindingPrimes.dll
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\Task1_FindingPrimes\bin\Debug\netcoreapp3.1\Task1_FindingPrimes.pdb
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\Task1_FindingPrimes\obj\Debug\netcoreapp3.1\Task1_FindingPrimes.csprojAssemblyReference.cache
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\Task1_FindingPrimes\obj\Debug\netcoreapp3.1\Task1_FindingPrimes.AssemblyInfoInputs.cache
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\Task1_FindingPrimes\obj\Debug\netcoreapp3.1\Task1_FindingPrimes.AssemblyInfo.cs
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\Task1_FindingPrimes\obj\Debug\netcoreapp3.1\Task1_FindingPrimes.csproj.CoreCompileInputs.cache
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\Task1_FindingPrimes\obj\Debug\netcoreapp3.1\Task1_FindingPrimes.dll
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\Task1_FindingPrimes\obj\Debug\netcoreapp3.1\Task1_FindingPrimes.pdb
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\Task1_FindingPrimes\obj\Debug\netcoreapp3.1\Task1_FindingPrimes.genruntimeconfig.cache
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\Task1_FindingPrimes\bin\Debug\netcoreapp3.1\settings.json

@@ -1,0 +1,15 @@
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\Task3_Notes\bin\Debug\netcoreapp3.1\Task3_Notes.exe
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\Task3_Notes\bin\Debug\netcoreapp3.1\Task3_Notes.deps.json
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\Task3_Notes\bin\Debug\netcoreapp3.1\Task3_Notes.runtimeconfig.json
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\Task3_Notes\bin\Debug\netcoreapp3.1\Task3_Notes.runtimeconfig.dev.json
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\Task3_Notes\bin\Debug\netcoreapp3.1\Task3_Notes.dll
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\Task3_Notes\bin\Debug\netcoreapp3.1\Task3_Notes.pdb
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\Task3_Notes\obj\Debug\netcoreapp3.1\Task3_Notes.csprojAssemblyReference.cache
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\Task3_Notes\obj\Debug\netcoreapp3.1\Task3_Notes.AssemblyInfoInputs.cache
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\Task3_Notes\obj\Debug\netcoreapp3.1\Task3_Notes.AssemblyInfo.cs
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\Task3_Notes\obj\Debug\netcoreapp3.1\Task3_Notes.csproj.CoreCompileInputs.cache
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\Task3_Notes\obj\Debug\netcoreapp3.1\Task3_Notes.dll
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\Task3_Notes\obj\Debug\netcoreapp3.1\Task3_Notes.pdb
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\Task3_Notes\obj\Debug\netcoreapp3.1\Task3_Notes.genruntimeconfig.cache
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\Task3_Notes\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\Task3_Notes\obj\Debug\netcoreapp3.1\Task3_Notes.csproj.CopyComplete

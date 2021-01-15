@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "F9V7VAs4ZhTP3e7WzOjxVE/WgMctH7JJYazxap62CxFcxscexiuWJNGeXctQosx/Vf3xiM+EjNqpH+KRfSA0Kg==",
+  "success": true,
+  "projectFilePath": "D:\\Mariia\\Parimatch\\PM_HomeWorks\\HomeWork4\\Task2_CurrencyConverter\\Task2_CurrencyConverter.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\dmybo\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,15 @@
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\Task2_CurrencyConverter\bin\Debug\netcoreapp3.1\Task2_CurrencyConverter.exe
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\Task2_CurrencyConverter\bin\Debug\netcoreapp3.1\Task2_CurrencyConverter.deps.json
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\Task2_CurrencyConverter\bin\Debug\netcoreapp3.1\Task2_CurrencyConverter.runtimeconfig.json
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\Task2_CurrencyConverter\bin\Debug\netcoreapp3.1\Task2_CurrencyConverter.runtimeconfig.dev.json
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\Task2_CurrencyConverter\bin\Debug\netcoreapp3.1\Task2_CurrencyConverter.dll
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\Task2_CurrencyConverter\bin\Debug\netcoreapp3.1\Task2_CurrencyConverter.pdb
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\Task2_CurrencyConverter\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\Task2_CurrencyConverter\obj\Debug\netcoreapp3.1\Task2_CurrencyConverter.csprojAssemblyReference.cache
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\Task2_CurrencyConverter\obj\Debug\netcoreapp3.1\Task2_CurrencyConverter.AssemblyInfoInputs.cache
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\Task2_CurrencyConverter\obj\Debug\netcoreapp3.1\Task2_CurrencyConverter.AssemblyInfo.cs
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\Task2_CurrencyConverter\obj\Debug\netcoreapp3.1\Task2_CurrencyConverter.csproj.CoreCompileInputs.cache
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\Task2_CurrencyConverter\obj\Debug\netcoreapp3.1\Task2_CurrencyConverter.csproj.CopyComplete
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\Task2_CurrencyConverter\obj\Debug\netcoreapp3.1\Task2_CurrencyConverter.dll
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\Task2_CurrencyConverter\obj\Debug\netcoreapp3.1\Task2_CurrencyConverter.pdb
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\Task2_CurrencyConverter\obj\Debug\netcoreapp3.1\Task2_CurrencyConverter.genruntimeconfig.cache

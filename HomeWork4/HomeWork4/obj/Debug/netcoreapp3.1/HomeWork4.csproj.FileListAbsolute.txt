@@ -1,0 +1,9 @@
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\HomeWork4\obj\Debug\netcoreapp3.1\HomeWork4.csprojAssemblyReference.cache
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\HomeWork4\obj\Debug\netcoreapp3.1\HomeWork4.AssemblyInfoInputs.cache
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\HomeWork4\obj\Debug\netcoreapp3.1\HomeWork4.AssemblyInfo.cs
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\HomeWork4\obj\Debug\netcoreapp3.1\HomeWork4.csproj.CoreCompileInputs.cache
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\HomeWork4\bin\Debug\netcoreapp3.1\HomeWork4.deps.json
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\HomeWork4\bin\Debug\netcoreapp3.1\HomeWork4.dll
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\HomeWork4\bin\Debug\netcoreapp3.1\HomeWork4.pdb
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\HomeWork4\obj\Debug\netcoreapp3.1\HomeWork4.dll
+D:\Mariia\Parimatch\PM_HomeWorks\HomeWork4\HomeWork4\obj\Debug\netcoreapp3.1\HomeWork4.pdb
