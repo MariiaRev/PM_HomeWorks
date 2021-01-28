@@ -27,6 +27,38 @@ namespace Library
         }
 
         /// <summary>
+        /// Accept user input from console window, as long as the input is not parsed to int more than zero.
+        /// </summary>
+        /// <param name="message">Message shown when prompted for user input</param>
+        /// <param name="allowZero">Indicates whether zero is included in valid values (true if zero is included, else false)</param>
+        /// <returns>User input of type int</returns>
+        public static int ReadPositiveInt(string message, bool allowZero)
+        {
+            Console.WriteLine(message);
+            var data = Console.ReadLine().Trim();
+            int number;
+
+            if (allowZero)
+            {
+                while (!int.TryParse(data, out number) || number < 0)
+                {
+                    Console.WriteLine($"\n\nYou need to enter a positive integer number or 0. Try again:");
+                    data = Console.ReadLine().Trim();
+                }
+            }
+            else
+            {
+                while (!int.TryParse(data, out number) || number <= 0)
+                {
+                    Console.WriteLine($"\n\nYou need to enter a positive integer number. Try again:");
+                    data = Console.ReadLine().Trim();
+                }
+            }
+
+            return number;
+        }
+
+        /// <summary>
         /// Accept user input from console window in a range from start to end (inclusive), as long as the input is not parsed to int.
         /// </summary>
         /// <param name="message">Message shown when prompted for user input</param>
