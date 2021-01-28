@@ -67,8 +67,8 @@ namespace PrimeNumbersSearch_Threads
             foreach (var s in settings)
             {
                 var numbers = Primes.GenerateListForPrimes(s.PrimesFrom, s.PrimesTo);
-                ThreadPool.QueueUserWorkItem(SearchPrimes, numbers);
-                //new Thread(() => SearchPrimes(numbers)).Start();
+                //ThreadPool.QueueUserWorkItem(SearchPrimes, numbers);
+                new Thread(() => SearchPrimes(numbers)).Start();
             }
 
             cde.Wait();
