@@ -15,6 +15,11 @@ namespace RequestProcessor.App
         /// <returns>Returns exit code.</returns>
         private static async Task<int> Main()
         {
+            //print greetings
+            Console.WriteLine($"{"",22}This is Homework 7 Task 1\n{"",26}Request Processor");
+            Console.WriteLine($"\n{"",19}### Made by Mariia Revenko ###");
+            Console.WriteLine($"{"",21}### and by 'colleague' ###\n\n");
+
             try
             {
                 // ToDo: Null arguments should be replaced with correct implementations.
