@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Net.Http;
 using System.Threading.Tasks;
 using RequestProcessor.App.Menu;
+using RequestProcessor.App.Services;
+using RequestProcessor.App.Logging;
 
 namespace RequestProcessor.App
 {
@@ -22,8 +25,19 @@ namespace RequestProcessor.App
 
             try
             {
-                // ToDo: Null arguments should be replaced with correct implementations.
-                var mainMenu = new MainMenu(null, null, null);
+                var client = new HttpClient
+                {
+                    Timeout = TimeSpan.FromSeconds(10)
+                };
+                var requestHandler = new RequestHandler(client);
+                var responseHandler = new ResponseHandler();
+                var logger = new Logger();
+                var performer = new RequestPerformer(requestHandler, responseHandler, logger);
+                
+                var optionsPath = "options.json";
+                var options = new OptionsSource(optionsPath);
+
+                var mainMenu = new MainMenu(performer, options, logger);
                 return await mainMenu.StartAsync();
             }
             catch (Exception ex)
