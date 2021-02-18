@@ -1,0 +1,122 @@
+2021-02-18 13:11:02.654 +02:00 [INF] Now listening on: http://localhost:5000
+2021-02-18 13:11:02.688 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-02-18 13:11:02.692 +02:00 [INF] Hosting environment: Development
+2021-02-18 13:11:02.693 +02:00 [INF] Content root path: D:\Mariia\Parimatch\PM_HomeWorks\HomeWork9\Primes_WebService
+2021-02-18 13:11:03.025 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/  
+2021-02-18 13:11:03.086 +02:00 [INF] Executing endpoint '/ HTTP: GET'
+2021-02-18 13:11:03.095 +02:00 [INF] Request: /
+Expected http status code: 200
+Result (http status code): 200
+2021-02-18 13:11:03.097 +02:00 [INF] Executed endpoint '/ HTTP: GET'
+2021-02-18 13:11:03.102 +02:00 [INF] Request finished in 81.2193ms 200 
+2021-02-18 13:11:11.465 +02:00 [INF] Now listening on: http://localhost:5000
+2021-02-18 13:11:11.499 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-02-18 13:11:11.501 +02:00 [INF] Hosting environment: Development
+2021-02-18 13:11:11.502 +02:00 [INF] Content root path: D:\Mariia\Parimatch\PM_HomeWorks\HomeWork9\Primes_WebService
+2021-02-18 13:11:20.027 +02:00 [INF] Now listening on: http://localhost:5000
+2021-02-18 13:11:20.059 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-02-18 13:11:20.063 +02:00 [INF] Hosting environment: Development
+2021-02-18 13:11:20.064 +02:00 [INF] Content root path: D:\Mariia\Parimatch\PM_HomeWorks\HomeWork9\Primes_WebService
+2021-02-18 13:11:20.397 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/  
+2021-02-18 13:11:20.448 +02:00 [INF] Executing endpoint '/ HTTP: GET'
+2021-02-18 13:11:20.461 +02:00 [INF] Request: /
+Expected http status code: 200
+Result (http status code): 200
+2021-02-18 13:11:20.464 +02:00 [INF] Executed endpoint '/ HTTP: GET'
+2021-02-18 13:11:20.470 +02:00 [INF] Request finished in 76.7861ms 200 
+2021-02-18 13:11:24.684 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/  
+2021-02-18 13:11:24.689 +02:00 [INF] Executing endpoint '/ HTTP: GET'
+2021-02-18 13:11:24.691 +02:00 [INF] Request: /
+Expected http status code: 200
+Result (http status code): 200
+2021-02-18 13:11:24.692 +02:00 [INF] Executed endpoint '/ HTTP: GET'
+2021-02-18 13:11:24.694 +02:00 [INF] Request finished in 10.0473ms 200 
+2021-02-18 13:11:24.718 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/primes/17  
+2021-02-18 13:11:24.720 +02:00 [INF] Executing endpoint '/primes/{number:int} HTTP: GET'
+2021-02-18 13:11:24.723 +02:00 [INF] Request: /primes/17
+Expected message: The number 17 is prime.
+Expected http status code: 200
+Result (http status code): 200
+2021-02-18 13:11:24.724 +02:00 [INF] Executed endpoint '/primes/{number:int} HTTP: GET'
+2021-02-18 13:11:24.726 +02:00 [INF] Request finished in 8.2553ms 200 
+2021-02-18 13:11:24.731 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/primes/22  
+2021-02-18 13:11:24.736 +02:00 [INF] Executing endpoint '/primes/{number:int} HTTP: GET'
+2021-02-18 13:11:24.737 +02:00 [INF] Request: /primes/22
+Expected message: The number 22 is not prime.
+Expected http status code: 404
+Result (http status code): 404
+2021-02-18 13:11:24.740 +02:00 [INF] Executed endpoint '/primes/{number:int} HTTP: GET'
+2021-02-18 13:11:24.742 +02:00 [INF] Request finished in 10.7983ms 404 
+2021-02-18 13:11:24.750 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/primes?from=0&to=10  
+2021-02-18 13:11:24.752 +02:00 [INF] Executing endpoint '/primes HTTP: GET'
+2021-02-18 13:11:24.759 +02:00 [INF] Request: /primes?from=0&to=10
+Content: 
+[2, 3, 5, 7]
+Expected http status code: 200
+Result (http status code): 200
+2021-02-18 13:11:24.761 +02:00 [INF] Executed endpoint '/primes HTTP: GET'
+2021-02-18 13:11:24.765 +02:00 [INF] Request finished in 14.32ms 200 
+2021-02-18 13:11:24.778 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/primes?from=-10&to=1  
+2021-02-18 13:11:24.781 +02:00 [INF] Executing endpoint '/primes HTTP: GET'
+2021-02-18 13:11:24.783 +02:00 [INF] Request: /primes?from=-10&to=1
+Content: 
+[]
+Expected http status code: 200
+Result (http status code): 200
+2021-02-18 13:11:24.788 +02:00 [INF] Executed endpoint '/primes HTTP: GET'
+2021-02-18 13:11:24.790 +02:00 [INF] Request finished in 11.6512ms 200 
+2021-02-18 13:11:24.802 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/primes?to=abcd  
+2021-02-18 13:11:24.804 +02:00 [INF] Executing endpoint '/primes HTTP: GET'
+2021-02-18 13:11:24.805 +02:00 [INF] Request: /primes?to=abcd
+Expected http status code: 400
+Result (http status code): 400
+2021-02-18 13:11:24.807 +02:00 [INF] Executed endpoint '/primes HTTP: GET'
+2021-02-18 13:11:24.811 +02:00 [INF] Request finished in 8.9555ms 400 
+2021-02-18 13:13:22.344 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/  
+2021-02-18 13:13:22.347 +02:00 [INF] Executing endpoint '/ HTTP: GET'
+2021-02-18 13:13:22.350 +02:00 [INF] Request: /
+Expected http status code: 200
+Result (http status code): 200
+2021-02-18 13:13:22.354 +02:00 [INF] Executed endpoint '/ HTTP: GET'
+2021-02-18 13:13:22.357 +02:00 [INF] Request finished in 13.597ms 200 
+2021-02-18 13:13:22.376 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/primes/17  
+2021-02-18 13:13:22.378 +02:00 [INF] Executing endpoint '/primes/{number:int} HTTP: GET'
+2021-02-18 13:13:22.382 +02:00 [INF] Request: /primes/17
+Expected message: The number 17 is prime.
+Expected http status code: 200
+Result (http status code): 200
+2021-02-18 13:13:22.384 +02:00 [INF] Executed endpoint '/primes/{number:int} HTTP: GET'
+2021-02-18 13:13:22.386 +02:00 [INF] Request finished in 10.1261ms 200 
+2021-02-18 13:13:22.393 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/primes/22  
+2021-02-18 13:13:22.395 +02:00 [INF] Executing endpoint '/primes/{number:int} HTTP: GET'
+2021-02-18 13:13:22.398 +02:00 [INF] Request: /primes/22
+Expected message: The number 22 is not prime.
+Expected http status code: 404
+Result (http status code): 404
+2021-02-18 13:13:22.399 +02:00 [INF] Executed endpoint '/primes/{number:int} HTTP: GET'
+2021-02-18 13:13:22.401 +02:00 [INF] Request finished in 7.7477ms 404 
+2021-02-18 13:13:22.413 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/primes?from=0&to=10  
+2021-02-18 13:13:22.414 +02:00 [INF] Executing endpoint '/primes HTTP: GET'
+2021-02-18 13:13:22.417 +02:00 [INF] Request: /primes?from=0&to=10
+Content: 
+[2, 3, 5, 7]
+Expected http status code: 200
+Result (http status code): 200
+2021-02-18 13:13:22.419 +02:00 [INF] Executed endpoint '/primes HTTP: GET'
+2021-02-18 13:13:22.423 +02:00 [INF] Request finished in 10.4442ms 200 
+2021-02-18 13:13:22.443 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/primes?from=-10&to=1  
+2021-02-18 13:13:22.445 +02:00 [INF] Executing endpoint '/primes HTTP: GET'
+2021-02-18 13:13:22.448 +02:00 [INF] Request: /primes?from=-10&to=1
+Content: 
+[]
+Expected http status code: 200
+Result (http status code): 200
+2021-02-18 13:13:22.451 +02:00 [INF] Executed endpoint '/primes HTTP: GET'
+2021-02-18 13:13:22.455 +02:00 [INF] Request finished in 11.5347ms 200 
+2021-02-18 13:13:22.464 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/primes?to=abcd  
+2021-02-18 13:13:22.466 +02:00 [INF] Executing endpoint '/primes HTTP: GET'
+2021-02-18 13:13:22.468 +02:00 [INF] Request: /primes?to=abcd
+Expected http status code: 400
+Result (http status code): 400
+2021-02-18 13:13:22.473 +02:00 [INF] Executed endpoint '/primes HTTP: GET'
+2021-02-18 13:13:22.476 +02:00 [INF] Request finished in 11.2404ms 400 
