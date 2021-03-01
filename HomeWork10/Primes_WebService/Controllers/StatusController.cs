@@ -20,7 +20,7 @@ namespace Primes_WebService.Controllers
         [ProducesResponseType(typeof(string), (int)HttpStatusCode.OK)]
         public IActionResult Status()
         {
-            var title = "This is Homework 9 Task 1. Prime Numbers Web Service made by Mariia Revenko";
+            var title = "This is Homework 10 Task 1. Prime Numbers Web Service made by Mariia Revenko";
 
             _logger.LogInformation($"{nameof(StatusController)}: Status request.\n{title}\nReturn {HttpStatusCode.OK}.");
 
