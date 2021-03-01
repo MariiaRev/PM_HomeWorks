@@ -32,8 +32,8 @@ namespace Primes_TestApp
                     await Test6(client)
                 };
 
-                var passed = results.Where(res => res == true).Count();
-                var failed = results.Where(res => res == false).Count();
+                var passed = results.Count(res => res);
+                var failed = results.Count(res => !res);
                 Console.WriteLine($"\n\nPassed tests: {passed}/{results.Count}");
                 Console.WriteLine($"Failed tests: {failed}/{results.Count}");
             }
@@ -79,7 +79,7 @@ namespace Primes_TestApp
             Console.WriteLine($"\n\t\tTEST: The author's and the app names");
             Console.WriteLine($"\n\nTesting request: {request}");
             Console.WriteLine($"Expected message: contains '{authorName}' and '{appName}'");
-            Console.WriteLine($"  Actual message:\n{actualContent}");
+            Console.WriteLine($"  Actual message: '{actualContent}'");
             Console.WriteLine($"Expected status code: {expectedStatusCode}");
             Console.WriteLine($"  Actual status code: {actualStatusCode}");
 
