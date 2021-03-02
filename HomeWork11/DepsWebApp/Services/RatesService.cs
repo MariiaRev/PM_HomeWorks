@@ -7,6 +7,7 @@ using DepsWebApp.Options;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Options;
 
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 namespace DepsWebApp.Services
 {
     public class RatesService : IRatesService

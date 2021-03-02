@@ -3,6 +3,8 @@ using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 using DepsWebApp.Services;
 
+//temporarily
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 namespace DepsWebApp.Controllers
 {
     [ApiController]

@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 namespace DepsWebApp.Services
 {
     public class CacheHostedService : IHostedService

@@ -1,18 +1,19 @@
+using System;
+using System.IO;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
+using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 using DepsWebApp.Clients;
+using DepsWebApp.Extensions;
 using DepsWebApp.Options;
 using DepsWebApp.Services;
-using Microsoft.Extensions.Options;
-using Microsoft.OpenApi.Models;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Hosting;
-using System.IO;
 
 namespace DepsWebApp
 {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -72,6 +73,9 @@ namespace DepsWebApp
             {
                 endpoints.MapControllers();
             });
+
+            app.UseCustomLogging();                         //connect logging middleware
         }
     }
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 }
