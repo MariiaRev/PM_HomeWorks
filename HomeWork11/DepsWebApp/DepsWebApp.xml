@@ -45,6 +45,18 @@
             Currency code.
             </summary>
         </member>
+        <member name="T:DepsWebApp.Controllers.AuthController">
+            <summary>
+            Authorization controller.
+            </summary>
+        </member>
+        <member name="M:DepsWebApp.Controllers.AuthController.Register(DepsWebApp.Models.User)">
+            <summary>
+            Register a new user.
+            </summary>
+            <param name="user">User with login and password accepted from request body.</param>
+            <exception cref="T:System.NotImplementedException"> while the action is not implemented.</exception>
+        </member>
         <member name="T:DepsWebApp.Controllers.RatesController">
             <summary>
             Rates controller.
@@ -72,6 +84,35 @@
             the <see cref="F:System.Net.HttpStatusCode.BadRequest"/> and an error message  otherwise.
             </returns>
         </member>
+        <member name="T:DepsWebApp.Exceptions.AuthException">
+            <summary>
+            The exception that is thrown when the authorization cannot be executed. 
+            </summary>
+        </member>
+        <member name="P:DepsWebApp.Exceptions.AuthException.ParamName">
+            <summary>
+            The name of the parameter that causes this exception.
+            </summary>
+        </member>
+        <member name="M:DepsWebApp.Exceptions.AuthException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:DepsWebApp.Exceptions.AuthException"/> class.
+            </summary>
+        </member>
+        <member name="M:DepsWebApp.Exceptions.AuthException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DepsWebApp.Exceptions.AuthException"/> class with the <paramref name="message"/>.
+            </summary>
+            <param name="message">Specified error message.</param>
+        </member>
+        <member name="M:DepsWebApp.Exceptions.AuthException.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DepsWebApp.Exceptions.AuthException"/> class 
+            with the <paramref name="paramName"/> that causes this exception and the <paramref name="message"/>.
+            </summary>
+            <param name="paramName">The parameter name that causes this exception.</param>
+            <param name="message"></param>
+        </member>
         <member name="T:DepsWebApp.Extensions.CustomLoggingExtensions">
             <summary>
             Extensions for custom logging.
@@ -84,6 +125,29 @@
             </summary>
             <param name="builder">The <see cref="T:Microsoft.AspNetCore.Builder.IApplicationBuilder"/> to add the middleware to.</param>
             <returns>Returns a reference to this instance after the operation has completed.</returns>
+        </member>
+        <member name="T:DepsWebApp.Filters.CustomExceptionFilter">
+            <summary>
+            Custom exception filter.
+            </summary>
+        </member>
+        <member name="M:DepsWebApp.Filters.CustomExceptionFilter.OnException(Microsoft.AspNetCore.Mvc.Filters.ExceptionContext)">
+            <summary>
+            Executes when an exception occurs.
+            </summary>
+            <param name="context">The context of the exception.</param>
+        </member>
+        <member name="T:DepsWebApp.Mappers.ExceptionMapper">
+            <summary>
+            Mapper for mapping <see cref="T:System.Exception"/> model to <see cref="T:DepsWebApp.Models.Error"/> model.
+            </summary>
+        </member>
+        <member name="M:DepsWebApp.Mappers.ExceptionMapper.MapExceptionToError(System.Exception)">
+            <summary>
+            Maps <paramref name="exception"/> to the <see cref="T:DepsWebApp.Models.Error"/> model.
+            </summary>
+            <param name="exception">Exception from which to map the error.</param>
+            <returns><see cref="T:DepsWebApp.Models.Error"/> mapped from <paramref name="exception"/></returns>
         </member>
         <member name="T:DepsWebApp.Middlewares.CustomLoggingMiddleware">
             <summary>
@@ -119,6 +183,28 @@
             Currency rate related to base currency.
             </summary>
         </member>
+        <member name="T:DepsWebApp.Models.Error">
+            <summary>
+            Error model.
+            </summary>
+        </member>
+        <member name="P:DepsWebApp.Models.Error.Code">
+            <summary>
+            The error code.
+            </summary>
+        </member>
+        <member name="P:DepsWebApp.Models.Error.Message">
+            <summary>
+            The error message.
+            </summary>
+        </member>
+        <member name="M:DepsWebApp.Models.Error.#ctor(System.Int32,System.String)">
+            <summary>
+            Initializes a new instance of the class <see cref="T:DepsWebApp.Models.Error"/> with <paramref name="code"/> and <paramref name="message"/>.
+            </summary>
+            <param name="code">The <see cref="P:DepsWebApp.Models.Error.Code"/> value.</param>
+            <param name="message">The <see cref="P:DepsWebApp.Models.Error.Message"/> value.</param>
+        </member>
         <member name="T:DepsWebApp.Models.ExchangeResult">
             <summary>
             Exchange operation result.
@@ -146,6 +232,33 @@
             <param name="rate">Set <see cref="P:DepsWebApp.Models.ExchangeResult.Rate"/> value.</param>
             <param name="srcAmount">Set <see cref="P:DepsWebApp.Models.ExchangeResult.SourceAmount"/> value.</param>
             <param name="destAmount">Set <see cref="P:DepsWebApp.Models.ExchangeResult.DestinationAmount"/> value.</param>
+        </member>
+        <member name="T:DepsWebApp.Models.User">
+            <summary>
+            User model.
+            </summary>
+        </member>
+        <member name="P:DepsWebApp.Models.User.Login">
+            <summary>
+            User login.
+            </summary>
+        </member>
+        <member name="P:DepsWebApp.Models.User.Password">
+            <summary>
+            User password.
+            </summary>
+        </member>
+        <member name="M:DepsWebApp.Models.User.#ctor">
+            <summary>
+            Parameterless constructor.
+            </summary>
+        </member>
+        <member name="M:DepsWebApp.Models.User.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instanse of the class <see cref="T:DepsWebApp.Models.User"/> with <paramref name="login"/> and <paramref name="password"/>.
+            </summary>
+            <param name="login">The <see cref="P:DepsWebApp.Models.User.Login"/> value.</param>
+            <param name="password">The <see cref="P:DepsWebApp.Models.User.Password"/> value.</param>
         </member>
         <member name="T:DepsWebApp.Options.CacheOptions">
             <summary>
