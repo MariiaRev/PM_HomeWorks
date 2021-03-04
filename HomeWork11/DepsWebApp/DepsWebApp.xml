@@ -45,6 +45,33 @@
             Currency code.
             </summary>
         </member>
+        <member name="T:DepsWebApp.Controllers.RatesController">
+            <summary>
+            Rates controller.
+            </summary>
+        </member>
+        <member name="M:DepsWebApp.Controllers.RatesController.#ctor(DepsWebApp.Services.IRatesService)">
+            <summary>
+            Construstor with DI.
+            </summary>
+            <param name="rates"></param>
+        </member>
+        <member name="M:DepsWebApp.Controllers.RatesController.Get(System.String,System.String,System.Nullable{System.Decimal})">
+            <summary>
+            Gets exchange amount from <paramref name="srcCurrency"/> to <paramref name="dstCurrency"/>.
+            If <paramref name="amount"/> is not set, then it is considered that it is equal to one.
+            </summary>
+            <param name="srcCurrency">The currency from which to make the exchange.</param>
+            <param name="dstCurrency">The currency to which to make the exchange.</param>
+            <param name="amount">The amount of the exchange.</param>
+            <returns>
+            The <see cref="F:System.Net.HttpStatusCode.OK"/> and the exchanged amount 
+            if <paramref name="srcCurrency"/> and <paramref name="dstCurrency"/> currencies are valid,
+            the <see cref="F:System.Net.HttpStatusCode.OK"/> and the input <paramref name="amount"/> 
+            if <paramref name="srcCurrency"/> and <paramref name="dstCurrency"/> are equal,
+            the <see cref="F:System.Net.HttpStatusCode.BadRequest"/> and an error message  otherwise.
+            </returns>
+        </member>
         <member name="T:DepsWebApp.Extensions.CustomLoggingExtensions">
             <summary>
             Extensions for custom logging.
@@ -63,19 +90,19 @@
             Middleware for enabling custom logging.
             </summary>
         </member>
-        <member name="M:DepsWebApp.Middlewares.CustomLoggingMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)">
+        <member name="M:DepsWebApp.Middlewares.CustomLoggingMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,Microsoft.Extensions.Logging.ILogger{DepsWebApp.Middlewares.CustomLoggingMiddleware})">
             <summary>
-            Constructor.
+            Constructor with DI.
             </summary>
             <param name="next">The next middleware in the pipeline.</param>
+            <param name="logger"><see cref="T:Microsoft.Extensions.Logging.ILogger"/> where to write logs.</param>
         </member>
-        <member name="M:DepsWebApp.Middlewares.CustomLoggingMiddleware.Invoke(Microsoft.AspNetCore.Http.HttpContext,Microsoft.Extensions.Logging.ILogger)">
+        <member name="M:DepsWebApp.Middlewares.CustomLoggingMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext)">
             <summary>
-            Invoking logging.
+            Logging requests with their results.
             </summary>
             <param name="context"><see cref="T:Microsoft.AspNetCore.Http.HttpContext"/> context.</param>
-            <param name="logger"><see cref="T:Microsoft.Extensions.Logging.ILogger"/> where to write logs.</param>
-            <returns>Returns no value (task).</returns>
+            <returns>Returns no value.</returns>
         </member>
         <member name="T:DepsWebApp.Models.CurrencyRate">
             <summary>

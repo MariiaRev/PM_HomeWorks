@@ -68,13 +68,13 @@ namespace DepsWebApp
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseCustomLogging();                         //connect logging middleware
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
 
-            app.UseCustomLogging();                         //connect logging middleware
         }
     }
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member

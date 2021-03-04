@@ -1,37 +1,54 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 using DepsWebApp.Services;
+using System.Net;
 
-//temporarily
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 namespace DepsWebApp.Controllers
 {
+    /// <summary>
+    /// Rates controller.
+    /// </summary>
     [ApiController]
     [Route("[controller]")]
     public class RatesController : ControllerBase
     {
-        private readonly ILogger<RatesController> _logger;
         private readonly IRatesService _rates;
 
+        /// <summary>
+        /// Construstor with DI.
+        /// </summary>
+        /// <param name="rates"></param>
         public RatesController(
-            IRatesService rates,
-            ILogger<RatesController> logger)
+            IRatesService rates)
         {
             _rates = rates;
-            _logger = logger;
         }
 
+        /// <summary>
+        /// Gets exchange amount from <paramref name="srcCurrency"/> to <paramref name="dstCurrency"/>.
+        /// If <paramref name="amount"/> is not set, then it is considered that it is equal to one.
+        /// </summary>
+        /// <param name="srcCurrency">The currency from which to make the exchange.</param>
+        /// <param name="dstCurrency">The currency to which to make the exchange.</param>
+        /// <param name="amount">The amount of the exchange.</param>
+        /// <returns>
+        /// The <see cref="HttpStatusCode.OK"/> and the exchanged amount 
+        /// if <paramref name="srcCurrency"/> and <paramref name="dstCurrency"/> currencies are valid,
+        /// the <see cref="HttpStatusCode.OK"/> and the input <paramref name="amount"/> 
+        /// if <paramref name="srcCurrency"/> and <paramref name="dstCurrency"/> are equal,
+        /// the <see cref="HttpStatusCode.BadRequest"/> and an error message  otherwise.
+        /// </returns>
         [HttpGet("{srcCurrency}/{dstCurrency}")]
-        public async Task<ActionResult<decimal>> Get(string srcCurrency, string dstCurrency, decimal? amount)
+        [ProducesResponseType(typeof(decimal), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(string), (int)HttpStatusCode.BadRequest)]
+        public async Task<IActionResult> Get(string srcCurrency, string dstCurrency, decimal? amount)
         {
-            var exchange =  await _rates.ExchangeAsync(srcCurrency, dstCurrency, amount ?? decimal.One);
+            var exchange = await _rates.ExchangeAsync(srcCurrency, dstCurrency, amount ?? decimal.One);
             if (!exchange.HasValue)
             {
-                _logger.LogDebug($"Can't exchange from '{srcCurrency}' to '{dstCurrency}'");
                 return BadRequest("Invalid currency code");
             }
-            return exchange.Value.DestinationAmount;
+            return Ok(exchange.Value.DestinationAmount);
         }
     }
 }
