@@ -16,7 +16,7 @@ namespace DepsWebApp.Middlewares
     public class CustomLoggingMiddleware
     {
         private readonly RequestDelegate _next;
-        private ILogger<CustomLoggingMiddleware> _logger;
+        private readonly ILogger<CustomLoggingMiddleware> _logger;
         private readonly RecyclableMemoryStreamManager _recyclableMemoryStreamManager;
 
         /// <summary>
