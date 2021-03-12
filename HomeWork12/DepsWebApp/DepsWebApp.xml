@@ -1,0 +1,325 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DepsWebApp</name>
+    </assembly>
+    <members>
+        <member name="T:DepsWebApp.Clients.IRatesProviderClient">
+            <summary>
+            Abstract currency rates provider interface.
+            </summary>
+        </member>
+        <member name="M:DepsWebApp.Clients.IRatesProviderClient.GetRatesAsync">
+            <summary>
+            Requests rates from  currency rates provider.
+            </summary>
+            <returns>Returns currency rates.</returns>
+        </member>
+        <member name="T:DepsWebApp.Clients.NbuClient">
+            <summary>
+            NBU currency rates provider.
+            For more details, please visit
+            https://bank.gov.ua/ua/open-data/api-dev
+            </summary>
+        </member>
+        <member name="M:DepsWebApp.Clients.NbuClient.#ctor(System.Net.Http.HttpClient,Microsoft.Extensions.Options.IOptions{DepsWebApp.Options.NbuClientOptions})">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:DepsWebApp.Clients.NbuClient.GetRatesAsync">
+            <inheritdoc/>
+        </member>
+        <member name="T:DepsWebApp.Contracts.NbuRate">
+            <summary>
+            NBU provider native data model for currency rate.
+            </summary>
+        </member>
+        <member name="P:DepsWebApp.Contracts.NbuRate.Rate">
+            <summary>
+            Currency rate related to base currency (UAH).
+            </summary>
+        </member>
+        <member name="P:DepsWebApp.Contracts.NbuRate.Currency">
+            <summary>
+            Currency code.
+            </summary>
+        </member>
+        <member name="T:DepsWebApp.Controllers.AuthController">
+            <summary>
+            Authorization controller.
+            </summary>
+        </member>
+        <member name="M:DepsWebApp.Controllers.AuthController.Register(DepsWebApp.Models.User)">
+            <summary>
+            Register a new user.
+            </summary>
+            <param name="user">User with login and password accepted from request body.</param>
+            <exception cref="T:System.NotImplementedException"> while the action is not implemented.</exception>
+        </member>
+        <member name="T:DepsWebApp.Controllers.RatesController">
+            <summary>
+            Rates controller.
+            </summary>
+        </member>
+        <member name="M:DepsWebApp.Controllers.RatesController.#ctor(DepsWebApp.Services.IRatesService)">
+            <summary>
+            Construstor with DI.
+            </summary>
+            <param name="rates"></param>
+        </member>
+        <member name="M:DepsWebApp.Controllers.RatesController.Get(System.String,System.String,System.Nullable{System.Decimal})">
+            <summary>
+            Gets exchange amount from <paramref name="srcCurrency"/> to <paramref name="dstCurrency"/>.
+            If <paramref name="amount"/> is not set, then it is considered that it is equal to one.
+            </summary>
+            <param name="srcCurrency">The currency from which to make the exchange.</param>
+            <param name="dstCurrency">The currency to which to make the exchange.</param>
+            <param name="amount">The amount of the exchange.</param>
+            <returns>
+            The <see cref="F:System.Net.HttpStatusCode.OK"/> and the exchanged amount 
+            if <paramref name="srcCurrency"/> and <paramref name="dstCurrency"/> currencies are valid,
+            the <see cref="F:System.Net.HttpStatusCode.OK"/> and the input <paramref name="amount"/> 
+            if <paramref name="srcCurrency"/> and <paramref name="dstCurrency"/> are equal,
+            the <see cref="F:System.Net.HttpStatusCode.BadRequest"/> and an error message  otherwise.
+            </returns>
+        </member>
+        <member name="T:DepsWebApp.Exceptions.AuthException">
+            <summary>
+            The exception that is thrown when the authorization cannot be executed. 
+            </summary>
+        </member>
+        <member name="P:DepsWebApp.Exceptions.AuthException.ParamName">
+            <summary>
+            The name of the parameter that causes this exception.
+            </summary>
+        </member>
+        <member name="M:DepsWebApp.Exceptions.AuthException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:DepsWebApp.Exceptions.AuthException"/> class.
+            </summary>
+        </member>
+        <member name="M:DepsWebApp.Exceptions.AuthException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DepsWebApp.Exceptions.AuthException"/> class with the <paramref name="message"/>.
+            </summary>
+            <param name="message">Specified error message.</param>
+        </member>
+        <member name="M:DepsWebApp.Exceptions.AuthException.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DepsWebApp.Exceptions.AuthException"/> class 
+            with the <paramref name="paramName"/> that causes this exception and the <paramref name="message"/>.
+            </summary>
+            <param name="paramName">The parameter name that causes this exception.</param>
+            <param name="message"></param>
+        </member>
+        <member name="T:DepsWebApp.Extensions.CustomLoggingExtensions">
+            <summary>
+            Extensions for custom logging.
+            </summary>
+        </member>
+        <member name="M:DepsWebApp.Extensions.CustomLoggingExtensions.UseCustomLogging(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Connects the <see cref="T:DepsWebApp.Middlewares.CustomLoggingMiddleware"/> middleware to the specified
+            <see cref="T:Microsoft.AspNetCore.Builder.IApplicationBuilder"/> which enables custom logging.
+            </summary>
+            <param name="builder">The <see cref="T:Microsoft.AspNetCore.Builder.IApplicationBuilder"/> to add the middleware to.</param>
+            <returns>Returns a reference to this instance after the operation has completed.</returns>
+        </member>
+        <member name="T:DepsWebApp.Filters.CustomExceptionFilter">
+            <summary>
+            Custom exception filter.
+            </summary>
+        </member>
+        <member name="M:DepsWebApp.Filters.CustomExceptionFilter.OnException(Microsoft.AspNetCore.Mvc.Filters.ExceptionContext)">
+            <summary>
+            Executes when an exception occurs.
+            </summary>
+            <param name="context">The context of the exception.</param>
+        </member>
+        <member name="T:DepsWebApp.Mappers.ExceptionMapper">
+            <summary>
+            Mapper for mapping <see cref="T:System.Exception"/> model to <see cref="T:DepsWebApp.Models.Error"/> model.
+            </summary>
+        </member>
+        <member name="M:DepsWebApp.Mappers.ExceptionMapper.MapExceptionToError(System.Exception)">
+            <summary>
+            Maps <paramref name="exception"/> to the <see cref="T:DepsWebApp.Models.Error"/> model.
+            </summary>
+            <param name="exception">Exception from which to map the error.</param>
+            <returns><see cref="T:DepsWebApp.Models.Error"/> mapped from <paramref name="exception"/></returns>
+        </member>
+        <member name="T:DepsWebApp.Middlewares.CustomLoggingMiddleware">
+            <summary>
+            Middleware for enabling custom logging.
+            </summary>
+        </member>
+        <member name="M:DepsWebApp.Middlewares.CustomLoggingMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,Microsoft.Extensions.Logging.ILogger{DepsWebApp.Middlewares.CustomLoggingMiddleware})">
+            <summary>
+            Constructor with DI.
+            </summary>
+            <param name="next">The next middleware in the pipeline.</param>
+            <param name="logger"><see cref="T:Microsoft.Extensions.Logging.ILogger"/> where to write logs.</param>
+        </member>
+        <member name="M:DepsWebApp.Middlewares.CustomLoggingMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Logging requests with their results.
+            </summary>
+            <param name="context"><see cref="T:Microsoft.AspNetCore.Http.HttpContext"/> context.</param>
+            <returns>Returns no value.</returns>
+        </member>
+        <member name="T:DepsWebApp.Models.CurrencyRate">
+            <summary>
+            Currency rate model.
+            </summary>
+        </member>
+        <member name="P:DepsWebApp.Models.CurrencyRate.Currency">
+            <summary>
+            Currency code (ISO).
+            </summary>
+        </member>
+        <member name="P:DepsWebApp.Models.CurrencyRate.Rate">
+            <summary>
+            Currency rate related to base currency.
+            </summary>
+        </member>
+        <member name="T:DepsWebApp.Models.Error">
+            <summary>
+            Error model.
+            </summary>
+        </member>
+        <member name="P:DepsWebApp.Models.Error.Code">
+            <summary>
+            The error code.
+            </summary>
+        </member>
+        <member name="P:DepsWebApp.Models.Error.Message">
+            <summary>
+            The error message.
+            </summary>
+        </member>
+        <member name="M:DepsWebApp.Models.Error.#ctor(System.Int32,System.String)">
+            <summary>
+            Initializes a new instance of the class <see cref="T:DepsWebApp.Models.Error"/> with <paramref name="code"/> and <paramref name="message"/>.
+            </summary>
+            <param name="code">The <see cref="P:DepsWebApp.Models.Error.Code"/> value.</param>
+            <param name="message">The <see cref="P:DepsWebApp.Models.Error.Message"/> value.</param>
+        </member>
+        <member name="T:DepsWebApp.Models.ExchangeResult">
+            <summary>
+            Exchange operation result.
+            </summary>
+        </member>
+        <member name="P:DepsWebApp.Models.ExchangeResult.Rate">
+            <summary>
+            Exchange rate.
+            </summary>
+        </member>
+        <member name="P:DepsWebApp.Models.ExchangeResult.SourceAmount">
+            <summary>
+            Amount in source currency.
+            </summary>
+        </member>
+        <member name="P:DepsWebApp.Models.ExchangeResult.DestinationAmount">
+            <summary>
+            Amount in destination currency.
+            </summary>
+        </member>
+        <member name="M:DepsWebApp.Models.ExchangeResult.#ctor(System.Decimal,System.Decimal,System.Decimal)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="rate">Set <see cref="P:DepsWebApp.Models.ExchangeResult.Rate"/> value.</param>
+            <param name="srcAmount">Set <see cref="P:DepsWebApp.Models.ExchangeResult.SourceAmount"/> value.</param>
+            <param name="destAmount">Set <see cref="P:DepsWebApp.Models.ExchangeResult.DestinationAmount"/> value.</param>
+        </member>
+        <member name="T:DepsWebApp.Models.User">
+            <summary>
+            User model.
+            </summary>
+        </member>
+        <member name="P:DepsWebApp.Models.User.Login">
+            <summary>
+            User login.
+            </summary>
+        </member>
+        <member name="P:DepsWebApp.Models.User.Password">
+            <summary>
+            User password.
+            </summary>
+        </member>
+        <member name="M:DepsWebApp.Models.User.#ctor">
+            <summary>
+            Parameterless constructor.
+            </summary>
+        </member>
+        <member name="M:DepsWebApp.Models.User.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instanse of the class <see cref="T:DepsWebApp.Models.User"/> with <paramref name="login"/> and <paramref name="password"/>.
+            </summary>
+            <param name="login">The <see cref="P:DepsWebApp.Models.User.Login"/> value.</param>
+            <param name="password">The <see cref="P:DepsWebApp.Models.User.Password"/> value.</param>
+        </member>
+        <member name="T:DepsWebApp.Options.CacheOptions">
+            <summary>
+            Caching options.
+            </summary>
+        </member>
+        <member name="P:DepsWebApp.Options.CacheOptions.RatesCacheLifeTime">
+            <summary>
+            Default rates cache lifetime.
+            </summary>
+        </member>
+        <member name="T:DepsWebApp.Options.NbuClientOptions">
+            <summary>
+            NBU client options.
+            </summary>
+        </member>
+        <member name="P:DepsWebApp.Options.NbuClientOptions.BaseAddress">
+            <summary>
+            Base address.
+            </summary>
+        </member>
+        <member name="P:DepsWebApp.Options.NbuClientOptions.IsValid">
+            <summary>
+            Shows if the <see cref="P:DepsWebApp.Options.NbuClientOptions.BaseAddress"/> is valid.
+            </summary>
+        </member>
+        <member name="T:DepsWebApp.Options.RatesOptions">
+            <summary>
+            Rates options.
+            </summary>
+        </member>
+        <member name="P:DepsWebApp.Options.RatesOptions.BaseCurrency">
+            <summary>
+            Base currency.
+            </summary>
+        </member>
+        <member name="P:DepsWebApp.Options.RatesOptions.IsValid">
+            <summary>
+            Shows if <see cref="P:DepsWebApp.Options.RatesOptions.BaseCurrency"/> is valid.
+            </summary>
+        </member>
+        <member name="T:DepsWebApp.Services.IRatesService">
+            <summary>
+            Currency rates service.
+            </summary>
+        </member>
+        <member name="M:DepsWebApp.Services.IRatesService.ExchangeAsync(System.String,System.String,System.Decimal)">
+            <summary>
+            Exchanges given amount from source currency to destination currency.
+            </summary>
+            <param name="srcCurrency">Source currency</param>
+            <param name="destCurrency">Destination currency</param>
+            <param name="amount">Amount of funds.</param>
+            <returns>Returns exchange result or <c>null</c> if source or destination currency wasn't found.</returns>
+        </member>
+        <member name="M:DepsWebApp.Services.IRatesService.ActualizeRatesAsync">
+            <summary>
+            Actualize rates.
+            Kind of abstraction leak.
+            </summary>
+            <returns>Returns awaiter</returns>
+        </member>
+    </members>
+</doc>
