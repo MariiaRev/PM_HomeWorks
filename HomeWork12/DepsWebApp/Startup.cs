@@ -49,6 +49,35 @@ namespace DepsWebApp
                 var filePath = Path.Combine(AppContext.BaseDirectory, "DepsWebApp.xml");
                 c.IncludeXmlComments(filePath);
                 c.EnableAnnotations();
+
+                // enable swagger for authorization
+                c.AddSecurityRequirement(
+                        new OpenApiSecurityRequirement
+                        {
+                            {
+                                new OpenApiSecurityScheme
+                                {
+                                    Reference = new OpenApiReference
+                                    {
+                                        Id = "Session",
+                                        Type = ReferenceType.SecurityScheme
+                                    },
+                                },
+                                new string[0]
+                            }
+                        });
+
+                c.AddSecurityDefinition(
+                    "Session",
+                    new OpenApiSecurityScheme
+                    {
+                        Type = SecuritySchemeType.ApiKey,
+                        In = ParameterLocation.Header,
+                        Scheme = "Session",
+                        Name = "Authorization",
+                        Description = "SessionId",
+                        BearerFormat = "SessionId"
+                    });
             });
 
             // Add batch of framework services
