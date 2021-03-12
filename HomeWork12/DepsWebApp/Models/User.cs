@@ -11,6 +11,7 @@ namespace DepsWebApp.Models
         /// User login.
         /// </summary>
         [Required]
+        [MinLength(6)]
         public string Login { get; set; }
 
         /// <summary>
