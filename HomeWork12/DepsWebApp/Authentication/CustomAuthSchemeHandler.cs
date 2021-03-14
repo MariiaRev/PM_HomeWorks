@@ -80,6 +80,7 @@ namespace DepsWebApp.Authentication
 
         private static User DecodeAuthorizationHeader(string authorizationHeader)
         {
+            authorizationHeader = authorizationHeader.Replace("Basic ", "");
             byte[] data = Convert.FromBase64String(authorizationHeader);
             var decodedString = Encoding.UTF8.GetString(data);
 
