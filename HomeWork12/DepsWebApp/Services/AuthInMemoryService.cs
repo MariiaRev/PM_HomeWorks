@@ -1,6 +1,6 @@
 ﻿using DepsWebApp.Models;
 using System.Collections.Concurrent;
-using System.Threading.Tasks;
+using System.Linq;
 
 namespace DepsWebApp.Services
 {
@@ -12,7 +12,7 @@ namespace DepsWebApp.Services
         private readonly ConcurrentDictionary<string, User> _users = new ConcurrentDictionary<string, User>();
 
         /// <inheritdoc/>
-        public async Task<bool> RegisterAsync(User user)
+        public bool Register(User user)
         {
             if (_users.TryAdd(user.Login, user))
             {
@@ -20,6 +20,19 @@ namespace DepsWebApp.Services
             }
 
             return false;
+        }
+
+        /// <inheritdoc/>
+        public bool CheckUser(User user)
+        {
+            var registeredUser = _users.Values.FirstOrDefault(u => u.Login == user.Login && u.Password == user.Password);
+            
+            if (registeredUser == null)
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }

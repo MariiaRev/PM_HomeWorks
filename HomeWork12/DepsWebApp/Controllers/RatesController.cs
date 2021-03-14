@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
-using DepsWebApp.Services;
-using System.Net;
+﻿using DepsWebApp.Services;
+using DepsWebApp.Authentication;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
+using System.Net;
+using System.Threading.Tasks;
 
 namespace DepsWebApp.Controllers
 {
@@ -12,6 +14,7 @@ namespace DepsWebApp.Controllers
     [ApiController]
     [Route("[controller]")]
     [SwaggerTag("This is the rates controller.")]
+    [Authorize]
     public class RatesController : ControllerBase
     {
         private readonly IRatesService _rates;
@@ -19,7 +22,6 @@ namespace DepsWebApp.Controllers
         /// <summary>
         /// Construstor with DI.
         /// </summary>
-        /// <param name="rates"></param>
         public RatesController(
             IRatesService rates)
         {

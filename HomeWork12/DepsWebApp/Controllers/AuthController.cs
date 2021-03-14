@@ -43,14 +43,14 @@ namespace DepsWebApp.Controllers
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType(typeof(Dictionary<string, object>), (int)HttpStatusCode.BadRequest)]
         [ProducesResponseType(typeof(string), (int)HttpStatusCode.Conflict)]
-        public async Task<IActionResult> RegisterAsync([FromBody] User user)
+        public IActionResult Register([FromBody] User user)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var registered = await _authService.RegisterAsync(user);
+            var registered = _authService.Register(user);
             
             if (registered)
             {

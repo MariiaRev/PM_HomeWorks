@@ -10,6 +10,7 @@ using DepsWebApp.Clients;
 using DepsWebApp.Extensions;
 using DepsWebApp.Options;
 using DepsWebApp.Services;
+using DepsWebApp.Authentication;
 
 namespace DepsWebApp
 {
@@ -31,7 +32,13 @@ namespace DepsWebApp
                 .Configure<CacheOptions>(Configuration.GetSection("Cache"))
                 .Configure<NbuClientOptions>(Configuration.GetSection("Client"))
                 .Configure<RatesOptions>(Configuration.GetSection("Rates"));
-            
+
+            // Add authentication
+            services
+                .AddAuthentication(CustomAuthScheme.Name)
+                .AddScheme<CustomAuthSchemeOptions, CustomAuthSchemeHandler>(
+                    CustomAuthScheme.Name, CustomAuthScheme.Name, null);
+
             // Add application services
             services.AddScoped<IRatesService, RatesService>();
             services.AddSingleton<IAuthService, AuthInMemoryService>();
@@ -98,6 +105,7 @@ namespace DepsWebApp
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
             app.UseCustomLogging();                         //connect logging middleware
 

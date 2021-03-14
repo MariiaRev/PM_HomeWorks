@@ -4,6 +4,77 @@
         <name>DepsWebApp</name>
     </assembly>
     <members>
+        <member name="T:DepsWebApp.Authentication.CustomAuthScheme">
+            <summary>
+            Custom authentication scheme.
+            </summary>
+        </member>
+        <member name="F:DepsWebApp.Authentication.CustomAuthScheme.Issuer">
+            <summary>
+            Scheme issuer.
+            </summary>
+        </member>
+        <member name="F:DepsWebApp.Authentication.CustomAuthScheme.Name">
+            <summary>
+            Scheme name.
+            </summary>
+        </member>
+        <member name="F:DepsWebApp.Authentication.CustomAuthScheme.Type">
+            <summary>
+            Scheme type.
+            </summary>
+        </member>
+        <member name="T:DepsWebApp.Authentication.CustomAuthSchemeHandler">
+            <summary>
+            Custom authentication scheme handler.
+            </summary>
+        </member>
+        <member name="M:DepsWebApp.Authentication.CustomAuthSchemeHandler.#ctor(Microsoft.Extensions.Options.IOptionsMonitor{DepsWebApp.Authentication.CustomAuthSchemeOptions},Microsoft.Extensions.Logging.ILoggerFactory,System.Text.Encodings.Web.UrlEncoder,Microsoft.AspNetCore.Authentication.ISystemClock,DepsWebApp.Services.IAuthService)">
+            <summary>
+            Constructor with DI.
+            </summary>
+        </member>
+        <member name="M:DepsWebApp.Authentication.CustomAuthSchemeHandler.HandleAuthenticateAsync">
+            <summary>
+            Handling the authentication.
+            </summary>
+            <returns>
+            <see cref="M:Microsoft.AspNetCore.Authentication.AuthenticateResult.NoResult"/> if authorization header is wrong; 
+            <see cref="M:Microsoft.AspNetCore.Authentication.AuthenticateResult.Success(Microsoft.AspNetCore.Authentication.AuthenticationTicket)"/> if authorization header is OK; 
+            <see cref="M:Microsoft.AspNetCore.Authentication.AuthenticateResult.Fail(System.Exception)"/> if an error occured during the authentication.
+            </returns>
+        </member>
+        <member name="T:DepsWebApp.Authentication.CustomAuthSchemeOptions">
+            <summary>
+            Custom authentication scheme options.
+            </summary>
+        </member>
+        <member name="M:DepsWebApp.Authentication.CustomAuthSchemeOptions.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="T:DepsWebApp.Authentication.UserAccountIdentity">
+            <summary>
+            Identity of user account.
+            </summary>
+        </member>
+        <member name="P:DepsWebApp.Authentication.UserAccountIdentity.UserLogin">
+            <summary>
+            User login.
+            </summary>
+        </member>
+        <member name="M:DepsWebApp.Authentication.UserAccountIdentity.#ctor">
+            <summary>
+            Parameterless constructor.
+            </summary>
+        </member>
+        <member name="M:DepsWebApp.Authentication.UserAccountIdentity.#ctor(System.String)">
+            <summary>
+            Constructor with parameters.
+            </summary>
+            <param name="userLogin"></param>
+        </member>
         <member name="T:DepsWebApp.Clients.IRatesProviderClient">
             <summary>
             Abstract currency rates provider interface.
@@ -56,7 +127,7 @@
             </summary>
             <param name="authService"><see cref="T:DepsWebApp.Services.AuthInMemoryService"/> service.</param>
         </member>
-        <member name="M:DepsWebApp.Controllers.AuthController.RegisterAsync(DepsWebApp.Models.User)">
+        <member name="M:DepsWebApp.Controllers.AuthController.Register(DepsWebApp.Models.User)">
             <summary>
             Registers a new user.
             </summary>
@@ -75,7 +146,6 @@
             <summary>
             Construstor with DI.
             </summary>
-            <param name="rates"></param>
         </member>
         <member name="M:DepsWebApp.Controllers.RatesController.Get(System.String,System.String,System.Nullable{System.Decimal})">
             <summary>
@@ -314,7 +384,10 @@
             In-memory authorization service which implements <see cref="T:DepsWebApp.Services.IAuthService"/>.
             </summary>
         </member>
-        <member name="M:DepsWebApp.Services.AuthInMemoryService.RegisterAsync(DepsWebApp.Models.User)">
+        <member name="M:DepsWebApp.Services.AuthInMemoryService.Register(DepsWebApp.Models.User)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DepsWebApp.Services.AuthInMemoryService.CheckUser(DepsWebApp.Models.User)">
             <inheritdoc/>
         </member>
         <member name="T:DepsWebApp.Services.IAuthService">
@@ -322,14 +395,21 @@
             Authorization service abstraction.
             </summary>
         </member>
-        <member name="M:DepsWebApp.Services.IAuthService.RegisterAsync(DepsWebApp.Models.User)">
+        <member name="M:DepsWebApp.Services.IAuthService.Register(DepsWebApp.Models.User)">
             <summary>
-            Registers user and assigns unique account id.
+            Registers a new user.
             </summary>
             <param name="user">User with login and password.</param>
             <returns>
             Returns <c>true</c> if user was registered or 
             <c>false</c> if user was not registered because login already exists.</returns>
+        </member>
+        <member name="M:DepsWebApp.Services.IAuthService.CheckUser(DepsWebApp.Models.User)">
+            <summary>
+            Checks if <paramref name="user"/> is registered.
+            </summary>
+            <param name="user">User with login and password.</param>
+            <returns><c>true</c> if user is registered or <c>false</c> otherwise.</returns>
         </member>
         <member name="T:DepsWebApp.Services.IRatesService">
             <summary>
