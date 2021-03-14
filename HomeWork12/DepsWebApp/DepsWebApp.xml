@@ -50,12 +50,21 @@
             Authorization controller.
             </summary>
         </member>
-        <member name="M:DepsWebApp.Controllers.AuthController.Register(DepsWebApp.Models.User)">
+        <member name="M:DepsWebApp.Controllers.AuthController.#ctor(DepsWebApp.Services.IAuthService)">
             <summary>
-            Register a new user.
+            Constructor with DI.
+            </summary>
+            <param name="authService"><see cref="T:DepsWebApp.Services.AuthInMemoryService"/> service.</param>
+        </member>
+        <member name="M:DepsWebApp.Controllers.AuthController.RegisterAsync(DepsWebApp.Models.User)">
+            <summary>
+            Registers a new user.
             </summary>
             <param name="user">User with login and password accepted from request body.</param>
-            <exception cref="T:System.NotImplementedException"> while the action is not implemented.</exception>
+            <returns>
+            <see cref="T:Microsoft.AspNetCore.Mvc.OkObjectResult"/> if <paramref name="user"/> model is valid and <paramref name="user"/> was registered.
+            <see cref="T:Microsoft.AspNetCore.Mvc.ConflictObjectResult"/> if <paramref name="user"/> model is valid and <see cref="P:DepsWebApp.Models.User.Login"/> already exists.
+            <see cref="T:Microsoft.AspNetCore.Mvc.BadRequestObjectResult"/> with explanations of the model's invalidity if <paramref name="user"/> model is invalid.</returns>
         </member>
         <member name="T:DepsWebApp.Controllers.RatesController">
             <summary>
@@ -299,6 +308,28 @@
             <summary>
             Shows if <see cref="P:DepsWebApp.Options.RatesOptions.BaseCurrency"/> is valid.
             </summary>
+        </member>
+        <member name="T:DepsWebApp.Services.AuthInMemoryService">
+            <summary>
+            In-memory authorization service which implements <see cref="T:DepsWebApp.Services.IAuthService"/>.
+            </summary>
+        </member>
+        <member name="M:DepsWebApp.Services.AuthInMemoryService.RegisterAsync(DepsWebApp.Models.User)">
+            <inheritdoc/>
+        </member>
+        <member name="T:DepsWebApp.Services.IAuthService">
+            <summary>
+            Authorization service abstraction.
+            </summary>
+        </member>
+        <member name="M:DepsWebApp.Services.IAuthService.RegisterAsync(DepsWebApp.Models.User)">
+            <summary>
+            Registers user and assigns unique account id.
+            </summary>
+            <param name="user">User with login and password.</param>
+            <returns>
+            Returns <c>true</c> if user was registered or 
+            <c>false</c> if user was not registered because login already exists.</returns>
         </member>
         <member name="T:DepsWebApp.Services.IRatesService">
             <summary>

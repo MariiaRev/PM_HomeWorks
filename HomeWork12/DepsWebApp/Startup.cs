@@ -34,6 +34,7 @@ namespace DepsWebApp
             
             // Add application services
             services.AddScoped<IRatesService, RatesService>();
+            services.AddSingleton<IAuthService, AuthInMemoryService>();
 
             // Add NbuClient as Transient
             services.AddHttpClient<IRatesProviderClient, NbuClient>()
