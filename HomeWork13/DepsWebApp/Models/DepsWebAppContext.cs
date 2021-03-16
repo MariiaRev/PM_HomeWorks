@@ -19,7 +19,19 @@ namespace DepsWebApp.Models
         public DepsWebAppContext(DbContextOptions<DepsWebAppContext> options)
             : base(options)
         {
-            //Database.EnsureCreated();
+            //Database.EnsureDeleted();
+            Database.EnsureCreated();
+        }
+
+        /// <summary>
+        /// Actions on model creating
+        /// </summary>
+        /// <param name="builder"></param>
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            builder.Entity<User>()
+                .HasIndex(u => u.Login)
+                .IsUnique();
         }
     }
 }

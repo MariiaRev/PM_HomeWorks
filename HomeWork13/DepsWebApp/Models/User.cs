@@ -1,4 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace DepsWebApp.Models
 {
@@ -7,6 +9,13 @@ namespace DepsWebApp.Models
     /// </summary>
     public class User
     {
+        /// <summary>
+        /// User id.
+        /// </summary>
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [JsonIgnore]
+        public int Id { get; set; }
+        
         /// <summary>
         /// User login.
         /// </summary>

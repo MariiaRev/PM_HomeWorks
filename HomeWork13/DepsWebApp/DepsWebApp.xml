@@ -262,6 +262,28 @@
             Currency rate related to base currency.
             </summary>
         </member>
+        <member name="T:DepsWebApp.Models.DepsWebAppContext">
+            <summary>
+            Database context for the application  DepsWebApp
+            </summary>
+        </member>
+        <member name="P:DepsWebApp.Models.DepsWebAppContext.Users">
+            <summary>
+            DbSet users represented by the model <see cref="T:DepsWebApp.Models.User"/>.
+            </summary>
+        </member>
+        <member name="M:DepsWebApp.Models.DepsWebAppContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{DepsWebApp.Models.DepsWebAppContext})">
+            <summary>
+            Constructor with <paramref name="options"/>.
+            </summary>
+            <param name="options"></param>
+        </member>
+        <member name="M:DepsWebApp.Models.DepsWebAppContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Actions on model creating
+            </summary>
+            <param name="builder"></param>
+        </member>
         <member name="T:DepsWebApp.Models.Error">
             <summary>
             Error model.
@@ -315,6 +337,11 @@
         <member name="T:DepsWebApp.Models.User">
             <summary>
             User model.
+            </summary>
+        </member>
+        <member name="P:DepsWebApp.Models.User.Id">
+            <summary>
+            User id.
             </summary>
         </member>
         <member name="P:DepsWebApp.Models.User.Login">
@@ -384,10 +411,27 @@
             In-memory authorization service which implements <see cref="T:DepsWebApp.Services.IAuthService"/>.
             </summary>
         </member>
-        <member name="M:DepsWebApp.Services.AuthInMemoryService.Register(DepsWebApp.Models.User)">
+        <member name="M:DepsWebApp.Services.AuthInMemoryService.RegisterAsync(DepsWebApp.Models.User)">
             <inheritdoc/>
         </member>
         <member name="M:DepsWebApp.Services.AuthInMemoryService.CheckUser(DepsWebApp.Models.User)">
+            <inheritdoc/>
+        </member>
+        <member name="T:DepsWebApp.Services.AuthPostgresService">
+            <summary>
+            Authorization service which implements <see cref="T:DepsWebApp.Services.IAuthService"/> and stores data in postgres database.
+            </summary>
+        </member>
+        <member name="M:DepsWebApp.Services.AuthPostgresService.#ctor(DepsWebApp.Models.DepsWebAppContext)">
+            <summary>
+            Constructor with DI.
+            </summary>
+            <param name="dbContext"></param>
+        </member>
+        <member name="M:DepsWebApp.Services.AuthPostgresService.RegisterAsync(DepsWebApp.Models.User)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DepsWebApp.Services.AuthPostgresService.CheckUser(DepsWebApp.Models.User)">
             <inheritdoc/>
         </member>
         <member name="T:DepsWebApp.Services.IAuthService">
@@ -395,9 +439,9 @@
             Authorization service abstraction.
             </summary>
         </member>
-        <member name="M:DepsWebApp.Services.IAuthService.Register(DepsWebApp.Models.User)">
+        <member name="M:DepsWebApp.Services.IAuthService.RegisterAsync(DepsWebApp.Models.User)">
             <summary>
-            Registers a new user.
+            Registers a new user asynchronously.
             </summary>
             <param name="user">User with login and password.</param>
             <returns>
