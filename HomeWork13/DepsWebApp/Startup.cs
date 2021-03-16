@@ -11,6 +11,8 @@ using DepsWebApp.Extensions;
 using DepsWebApp.Options;
 using DepsWebApp.Services;
 using DepsWebApp.Authentication;
+using DepsWebApp.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace DepsWebApp
 {
@@ -91,6 +93,10 @@ namespace DepsWebApp
             // Add batch of framework services
             services.AddMemoryCache();
             services.AddControllers();
+
+            // Add db context
+            services.AddDbContext<DepsWebAppContext>(options =>
+            options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
         }
 
         // This method gets called by the runtime.
