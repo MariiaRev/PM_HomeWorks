@@ -53,7 +53,7 @@ namespace DepsWebApp.Tests
         {
             var testName = "Registration with valid login and password but with existed login";
             var request = "auth/register";
-            var expectedStatusCode = HttpStatusCode.Conflict;
+            var expectedStatusCode = HttpStatusCode.BadRequest;
 
             // register user
             var byteContent1 = SetByteUserContent(login, password);

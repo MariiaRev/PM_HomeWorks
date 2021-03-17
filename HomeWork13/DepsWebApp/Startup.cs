@@ -96,12 +96,12 @@ namespace DepsWebApp
 
             // Add db context
             services.AddDbContext<DepsWebAppContext>(options =>
-            options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
+                options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
         }
 
         // This method gets called by the runtime.
         // Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public async void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -120,6 +120,10 @@ namespace DepsWebApp
                 endpoints.MapControllers();
             });
 
+            // add migrations
+            using var scope = app.ApplicationServices.CreateScope();
+            await using var depsWebAppContext = scope.ServiceProvider.GetRequiredService<DepsWebAppContext>();
+            await depsWebAppContext.Database.MigrateAsync();
         }
     }
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member

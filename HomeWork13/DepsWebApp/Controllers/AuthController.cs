@@ -42,7 +42,7 @@ namespace DepsWebApp.Controllers
         [HttpPost("[action]")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType(typeof(Dictionary<string, object>), (int)HttpStatusCode.BadRequest)]
-        [ProducesResponseType(typeof(string), (int)HttpStatusCode.Conflict)]
+        [ProducesResponseType(typeof(string), (int)HttpStatusCode.BadRequest)]
         public async Task<IActionResult> Register([FromBody] User user)
         {
             if (!ModelState.IsValid)
@@ -57,7 +57,7 @@ namespace DepsWebApp.Controllers
                 return Ok();
             }
             
-            return Conflict("User already exists. Please try another login.");
+            return BadRequest("User already exists. Please try another login.");
         }
     }
 }

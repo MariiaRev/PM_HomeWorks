@@ -29,18 +29,15 @@ namespace DepsWebApp.Services
                 return false;
             }
 
-            await _dbContext.AddAsync(user);
-
-            try
+            var userExists = _dbContext.Users.Where(u => u.Login == user.Login).FirstOrDefault();
+            if (userExists == null)
             {
+                await _dbContext.AddAsync(user);
                 await _dbContext.SaveChangesAsync();
-            }
-            catch (Exception)       // when constraints are violated
-            {
-                return false;
+                return true;
             }
 
-            return true;
+            return false;
         }
 
         /// <inheritdoc/>

@@ -19,8 +19,6 @@ namespace DepsWebApp.Models
         public DepsWebAppContext(DbContextOptions<DepsWebAppContext> options)
             : base(options)
         {
-            //Database.EnsureDeleted();
-            Database.EnsureCreated();
         }
 
         /// <summary>
